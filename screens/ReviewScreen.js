@@ -2,6 +2,14 @@ import React,  { Component } from 'react';
 import { View, Text } from 'react-native';
 
 class ReviewScreen extends Component {
+
+	static navigationOptions = {
+		title: 'Review Jobs',
+		headerRight:  <Text>Right</Text>,
+		headerLeft:  <Text>Left</Text>,
+		tintColor: 'Brown'
+	}
+
 	render() {
 		return (
 			<View>
