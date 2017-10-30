@@ -25,6 +25,7 @@ class App extends React.Component {
           screen: TabNavigator({
             map: { screen: MapScreen },
             deck: { screen: DeckScreen },
+            // wire up stack navigator inside tab Navigator
             review: { screen: StackNavigator({
               review: { screen: ReviewScreen },
               settings: { screen: SettingsScreen}
