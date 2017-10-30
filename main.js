@@ -5,6 +5,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import { TabNavigator } from 'react-navigation';
 import AuthScreen from './screens/AuthScreen';
 import WelcomeScreen from './screens/WelcomeScreen';
+import MapScreen from './screens/MapScreen';
+import DeckScreen from './screens/DeckScreen';
 
 class App extends React.Component {
 
@@ -14,7 +16,14 @@ class App extends React.Component {
     const MainNavigator = TabNavigator(
       {
         welcome: { screen: WelcomeScreen },
-        auth: { screen: AuthScreen }
+        auth: { screen: AuthScreen },
+        // nested tab navigators
+        main: {
+          screen: TabNavigator({
+            map: { screen: MapScreen },
+            deck: { screen: DeckScreen }
+          })
+        }
       },
       // TabNavigatorConfig
       {
