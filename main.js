@@ -31,11 +31,13 @@ class App extends React.Component {
               settings: { screen: SettingsScreen}
              })
             }
+          }, {
+            tabBarPosition: 'bottom',
+            animationEnabled: true,
+            tabBarOptions: { activeTintColor: '#e91e63' }      
           })
         }
-      },
-      // TabNavigatorConfig
-      {
+      }, {
         tabBarPosition: 'bottom',
         animationEnabled: true,
         tabBarOptions: { activeTintColor: '#e91e63' }      
