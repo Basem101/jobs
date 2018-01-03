@@ -9,6 +9,8 @@ import ReviewScreen from './screens/ReviewScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import WelcomeScreen from './screens/WelcomeScreen';
 
+import { Provider } from 'react-redux';
+import store from './store'
 
 
 export default class App extends React.Component {
@@ -16,10 +18,12 @@ export default class App extends React.Component {
 
 
 
-    const conf = {
-      tabBarPosition: 'bottom',
+    const tabNavigatorConf = {
+      tabBarPosition: 'top',
       animationEnabled: true,
-      tabBarOptions: { activeTintColor: 'blue'}
+      tabBarOptions: { activeTintColor: 'blue'},
+      lazy: true,
+      navigationOptions: { tabBarVisible : false }
     }
 
     const MainNavigator = TabNavigator(
@@ -36,10 +40,10 @@ export default class App extends React.Component {
                 settings: { screen: SettingsScreen }
               })
             }
-          }, conf)
+          })
         }
       },
-      conf
+      tabNavigatorConf
     )
 
 
@@ -75,10 +79,12 @@ export default class App extends React.Component {
     // );
 
     return (
-      <View style={styles.container}>
-        <Text>render?</Text>
-        <MainNavigator />
-      </View>
+      <Provider store={store}>
+        <View style={styles.container}>
+          <Text>render?</Text>
+          <MainNavigator />
+        </View>
+      </Provider>
     );
   }
 }

@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, AsyncStorage } from 'react-native';
 import Slides from '../components/slides';
+import { connect } from 'react-redux';
+import * as actions from '../actions/auth_actions';
+import { AppLoading } from 'expo';
+import _ from 'lodash';
+
 
 const SLIDE_DATA = [
 	{ text: 'Welcome to JobApp', color: '#03A9F4' },
@@ -10,19 +15,43 @@ const SLIDE_DATA = [
 
 class WelcomeScreen extends Component {
 
+	state = {
+		token: null
+	}
+
+	async componentWillMount() {
+		let token = await AsyncStorage.getItem('fb_token');
+		console.log('token? ', token);
+		if(token) {
+			this.props.navigation.navigate('map');
+			this.setState({ token });
+		} else {
+			this.setState({
+				token: false
+			})
+		}
+	}
 
 	onSlidesComplete = () => {
 		this.props.navigation.navigate('auth');
 	}
 
 	render() {
-		return (
-			<Slides
-				data={SLIDE_DATA}
-				onComplete={this.onSlidesComplete}
-			/>
-		)
+
+		// if(this.state.token === null) {
+		// 	console.log('this.state.token is null');
+		// 	return <AppLoading />
+		// }
+
+		// return (
+		// 	<Slides
+		// 		data={SLIDE_DATA}
+		// 		onComplete={this.onSlidesComplete}
+		// 	/>
+		// )
+		return <AppLoading />
+
 	}
 }
 
-export default WelcomeScreen;
+export default connect(null, actions)(WelcomeScreen);
