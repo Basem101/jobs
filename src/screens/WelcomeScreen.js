@@ -38,18 +38,18 @@ class WelcomeScreen extends Component {
 
 	render() {
 
-		// if(this.state.token === null) {
-		// 	console.log('this.state.token is null');
-		// 	return <AppLoading />
-		// }
+		if(this.state.token === null) {
+			console.log('this.state.token is null');
+			return <AppLoading />
+		}
 
-		// return (
-		// 	<Slides
-		// 		data={SLIDE_DATA}
-		// 		onComplete={this.onSlidesComplete}
-		// 	/>
-		// )
-		return <AppLoading />
+		return (
+			<Slides
+				data={SLIDE_DATA}
+				onComplete={this.onSlidesComplete}
+			/>
+		)
+		// return <AppLoading />
 
 	}
 }

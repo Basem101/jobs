@@ -2,15 +2,15 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 
-import AuthScreen from './screens/AuthScreen';
-import DeckScreen from './screens/DeckScreen';
-import MapScreen from './screens/MapScreen';
-import ReviewScreen from './screens/ReviewScreen';
-import SettingsScreen from './screens/SettingsScreen';
-import WelcomeScreen from './screens/WelcomeScreen';
+import AuthScreen from './src/screens/AuthScreen';
+import DeckScreen from './src/screens/DeckScreen';
+import MapScreen from './src/screens/MapScreen';
+import ReviewScreen from './src/screens/ReviewScreen';
+import SettingsScreen from './src/screens/SettingsScreen';
+import WelcomeScreen from './src/screens/WelcomeScreen';
 
 import { Provider } from 'react-redux';
-import store from './store'
+import store from './src/store'
 
 
 export default class App extends React.Component {
