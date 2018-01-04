@@ -26,8 +26,5 @@ doFacebookLogin = async (dispatch) => {
   }
   await AsyncStorage.setItem('fb_token', token);
   dispatch({ type: FACEBOOK_LOGIN_SUCCESS, payload: token });
-  console.log('type: ', type);
-  console.log('token: ', token);
-  console.log('param: ', param);
 };
 

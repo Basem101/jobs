@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, AsyncStorage } from 'react-native';
-import Slides from '../components/slides';
+import { AsyncStorage } from 'react-native';
 import { connect } from 'react-redux';
-import * as actions from '../actions/auth_actions';
 import { AppLoading } from 'expo';
-import _ from 'lodash';
-
+import Slides from '../components/slides';
+import * as actions from '../actions/auth_actions';
 
 const SLIDE_DATA = [
   { text: 'Welcome to JobApp', color: '#03A9F4' },
