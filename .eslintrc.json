@@ -7,6 +7,7 @@
     "parser": "babel-eslint",
     "extends": "airbnb",
     "rules": {
-        "no-tabs": "off"
+        "no-tabs": "off",
+        "indent": [2, "tab"]
     }
 }
