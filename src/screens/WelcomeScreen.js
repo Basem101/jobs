@@ -16,26 +16,23 @@ class WelcomeScreen extends Component {
 		token: null,
 	}
 
-	async componentWillMount() {
-		const token = await AsyncStorage.getItem('fb_token');
-		if (token) {
-			this.props.navigation.navigate('map');
-			this.setState({ token });
-		} else {
-			this.setState({
-				token: false,
-			});
-		}
-	}
+	// async componentWillMount() {
+	// 	const token = await AsyncStorage.getItem('fb_token');
+	// 	if (token) {
+	// 		this.props.navigation.navigate('map');
+	// 		this.setState({ token });
+	// 	} else {
+	// 		this.setState({
+	// 			token: false,
+	// 		});
+	// 	}
+	// }
 
 	onSlidesComplete = () => {
 		this.props.navigation.navigate('auth');
 	}
 
 	render() {
-		if (this.state.token === null) {
-			return <AppLoading />;
-		}
 		return (
 			<Slides
 				data={SLIDE_DATA}
