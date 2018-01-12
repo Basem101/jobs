@@ -3,6 +3,8 @@
   "private": true,
   "dependencies": {
     "expo": "^24.0.0",
+    "flow": "^0.2.3",
+    "flow-bin": "^0.62.0",
     "lodash": "^4.17.4",
     "react": "16.0.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-24.0.0.tar.gz",
@@ -25,6 +27,7 @@
     "eslint-plugin-react": "^7.5.1"
   },
   "scripts": {
-    "lint": "./node_modules/.bin/eslint ./src"
+    "lint": "./node_modules/.bin/eslint ./src",
+    "flow": "./node_modules/.bin/flow"
   }
 }

@@ -40,7 +40,7 @@ class WelcomeScreen extends Component {
 			<Slides
 				data={SLIDE_DATA}
 				onComplete={this.onSlidesComplete}
-			/>
+  />
 		);
 	}
 }

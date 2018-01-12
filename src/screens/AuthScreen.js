@@ -1,3 +1,5 @@
+/* @flow weak */
+
 import React, { Component } from 'react';
 import { View, Text, AsyncStorage } from 'react-native';
 import { Facebook } from 'expo';
@@ -5,6 +7,16 @@ import * as actions from '../actions/auth_actions';
 import { connect } from 'react-redux';
 
 class AuthScreen extends Component {
+
+  props: {
+    token: any,
+    facebookLogin: Function,
+    navigation: {
+      navigate: any
+    }
+
+  };
+
   componentDidMount() {
     this.props.facebookLogin();
     this.onAuthComplete(this.props);
